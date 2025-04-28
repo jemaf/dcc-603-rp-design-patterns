@@ -2,7 +2,32 @@
 
 Professor: João Eduardo Montandon
 
-**Objetivo: Nesta lista, você irá experimentar o uso dos principais padrões de projeto existentes.**
+**Objetivo: Nesta prática, você irá experimentar o uso dos principais padrões de projeto existentes.**
+
+## Requisitos
+
+- Git SCM (https://git-scm.com/)
+- IntelliJ IDEA Community Edition (https://www.jetbrains.com/idea/download)
+  - Essa IDE é uma **recomendação**, apenas. O projeto foi construído utilizando a sua estrutura. Fique a vontade para utilizar outra, caso queira.
+
+## Entrega
+
+O roteiro deverá ser entregue utilizando o mecanismo de pull-request.
+
+1. Faça o fork do projeto para a sua conta (https://github.com/jemaf/dcc-603-rp-design-patterns/fork)
+2. Implemente sua solução no fork **associado a sua conta**.
+   - Não se esqueça de fazer os commits a medida em que implementar as tarefas pendentes.
+3. Certifique-se de que você realizou o push com todos os commits.
+4. Realize o Pull Request do seu projeto. Para isso, acesse o repositório original, e clique no botão "Compare & Pull Request", presente no banner amarelo do topo da página.
+   - Para mais informações veja: https://docs.github.com/pt/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
+
+## Avaliação
+
+- Cada implementação de padrão será avaliada em 1 ponto.
+  - Total se sua implementação passar todos os testes.
+  - 50% se sua implementação passar por pela metade de casos de teste.
+  - 25% se sua implementação passar por pelo menos um caso de teste.
+
 
 ## Padrão Singleton
 
@@ -44,7 +69,7 @@ Seu padrão deverá suportar três modos diferentes de autenticação:
 2. `UpperCaseStrategy`, senhas devem ter pelo menos uma letra maiúscula
 3. `SpecialCharStrategy`, senhas devem ter pelo menos um caractere especial
 
-Para isso, Suas classes de validação deverão herdar a classe abstrata `PasswordStrategy`. 
+Para isso, suas classes de validação deverão herdar a classe abstrata `PasswordStrategy`. 
 Você ainda deverá alterar a classe `PasswordValidator` para que ela faça a verificação das estratégias criadas anteriormente.
 Essa classe deverá implementar um `setStrategy(PasswordStrategy)` para definir a estratégia de validação atual e um método `validate` para chamar a validação da estratégia definida anteriormente.
 
