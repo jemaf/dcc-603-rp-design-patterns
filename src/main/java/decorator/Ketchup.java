@@ -1,0 +1,31 @@
+package decorator;
+
+public class Ketchup extends IngredienteDecorator {
+    public Ketchup(Ingrediente ingrediente) {
+        super(ingrediente);
+    }
+
+    public Ketchup() {
+        super(null);
+    }
+
+    @Override
+    public String imprimeIngrediente() {
+        String ingredientes = getClass().getSimpleName();
+
+        if (super.ingrediente != null)
+            ingredientes += ", " + super.ingrediente.imprimeIngrediente();
+
+        return ingredientes;
+    }
+
+    @Override
+    public double valorDoIngrediente() {
+        double valor = 1.00;
+
+        if (super.ingrediente != null)
+            valor += super.ingrediente.valorDoIngrediente();
+
+        return valor;
+    }
+}
