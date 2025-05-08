@@ -2,10 +2,20 @@ package singleton;
 
 public class DBConnection {
 
+    private static DBConnection instance;
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    // Construtor privado para evitar instância externa
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
+    }
+
+    // Método público estático para acessar a instância única
+    public static DBConnection getInstance(String connectionString) {
+        if (instance == null) {
+            instance = new DBConnection(connectionString);
+        }
+        return instance;
     }
 
     public void connect() throws InterruptedException {
