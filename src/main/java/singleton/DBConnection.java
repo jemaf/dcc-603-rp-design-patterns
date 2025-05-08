@@ -1,11 +1,22 @@
 package singleton;
 
 public class DBConnection {
-
+    private static volatile DBConnection instance;
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
+    }
+
+    public static DBConnection getInstance(String connectionString) {
+        if (instance == null) {
+            synchronized (DBConnection.class) {
+                if (instance == null) {
+                    instance = new DBConnection(connectionString);
+                }
+            }
+        }
+        return instance;
     }
 
     public void connect() throws InterruptedException {
