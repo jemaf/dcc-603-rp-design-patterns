@@ -20,7 +20,15 @@ public abstract class PasswordStrategy {
         }
     }
 
-    
+    // Estratégia para validar a presença de um caractere especial
+    public class SpecialCharStrategy extends PasswordStrategy {
+
+        @Override
+        public boolean validate(String password) {
+            return password.matches(".*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?].*");
+
+        }
+    }
 
     public abstract boolean validate(String password);
 }
