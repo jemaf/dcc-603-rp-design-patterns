@@ -32,3 +32,5 @@ public abstract class PasswordStrategy {
 
     public abstract boolean validate(String password);
 }
+
+// Método Strategy passou os testes!
