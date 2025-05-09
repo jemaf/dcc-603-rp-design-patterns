@@ -9,7 +9,14 @@ public class DBConnection {
     private DBConnection(String connectionString) {
         this.connectionString = connectionString;
     }
-    
+
+    // Método estático para instância única
+    public static DBConnection getInstance(String connectionString) {
+        if (instance == null) {
+            instance = new DBConnection(connectionString);
+        }
+        return instance;
+    }
 
     public void connect() throws InterruptedException {
         System.out.println("Connecting to " + this.connectionString);
