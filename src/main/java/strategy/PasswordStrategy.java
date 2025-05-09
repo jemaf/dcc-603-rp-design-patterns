@@ -11,6 +11,16 @@ public abstract class PasswordStrategy {
         }
     }
 
+    // Estratégia para validar a presença de uma letra maiúscula
+    public class UpperCaseStrategy extends PasswordStrategy {
+
+        @Override
+        public boolean validate(String password) {
+            return password.chars().anyMatch(Character::isUpperCase);
+        }
+    }
+
+    
 
     public abstract boolean validate(String password);
 }
