@@ -24,3 +24,5 @@ public class DBConnection {
         System.out.println("Connected!!");
     }
 }
+
+// Método Singleton passou os teste!
