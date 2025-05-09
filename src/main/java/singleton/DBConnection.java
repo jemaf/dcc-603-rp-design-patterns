@@ -2,11 +2,14 @@ package singleton;
 
 public class DBConnection {
 
+    private static DBConnection instance;
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    // Construtor privado
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
     }
+    
 
     public void connect() throws InterruptedException {
         System.out.println("Connecting to " + this.connectionString);
