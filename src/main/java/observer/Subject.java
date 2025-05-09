@@ -12,7 +12,7 @@ public class Subject {
     }
 
     public void add(Observer observer) {
-//        TODO adicionar observer para ser notificado posteriormente
+//        this.observers.add(observer);
     }
 
     public void notifyObservers() {
