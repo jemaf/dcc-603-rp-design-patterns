@@ -23,3 +23,4 @@ public class Subject {
 
 }
 
+// Método Observer passou os testes!
