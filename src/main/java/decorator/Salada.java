@@ -26,7 +26,7 @@ public class Salada extends IngredienteDecorator {
 
         if (super.ingrediente != null)
             valor += ingrediente.valorDoIngrediente();
-        
+
         return valor;
     }
 }
