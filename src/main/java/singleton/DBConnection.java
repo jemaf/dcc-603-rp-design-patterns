@@ -4,8 +4,17 @@ public class DBConnection {
 
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
+    };
+
+    private static DBConnection instance;
+
+    public static DBConnection getInstance(String connectionString) {
+        if (instance == null) {
+            instance = new DBConnection(connectionString);
+        }
+        return instance;
     }
 
     public void connect() throws InterruptedException {
