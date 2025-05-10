@@ -9,12 +9,8 @@ public abstract class IngredienteDecorator implements Ingrediente {
     }
 
     @Override
-    public String imprimeIngrediente() {
-        return this.ingrediente.imprimeIngrediente();
-    }
+    public abstract String imprimeIngrediente();
 
     @Override
-    public double valorDoIngrediente() {
-        return this.ingrediente.valorDoIngrediente();
-    }
+    public abstract double valorDoIngrediente();
 }
