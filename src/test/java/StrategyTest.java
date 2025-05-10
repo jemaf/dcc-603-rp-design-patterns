@@ -20,7 +20,8 @@ public class StrategyTest {
     private Method validateStrategy;
 
     @BeforeEach
-    public void beforeAll() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+    public void beforeAll() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException,
+            InstantiationException, IllegalAccessException {
         lengthStrategy = Class.forName("strategy.LengthStrategy").getDeclaredConstructor().newInstance();
         upperCaseStrategy = Class.forName("strategy.UpperCaseStrategy").getDeclaredConstructor().newInstance();
         specialCharStrategy = Class.forName("strategy.SpecialCharStrategy").getDeclaredConstructor().newInstance();
@@ -50,7 +51,8 @@ public class StrategyTest {
 
     @Test
     @DisplayName("Strategies devem ser verificadas no validator")
-    public void testShouldVerifyAllStrategies() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public void testShouldVerifyAllStrategies()
+            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         PasswordValidator validator = new PasswordValidator();
         Method setStrategy = PasswordValidator.class.getDeclaredMethod("setStrategy", PasswordStrategy.class);
         Method validate = PasswordValidator.class.getDeclaredMethod("validate", String.class);
