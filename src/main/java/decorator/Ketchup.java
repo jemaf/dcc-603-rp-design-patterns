@@ -6,7 +6,7 @@ public class Ketchup extends IngredienteDecorator {
         super(ingrediente);
     }
 
-    public Bacon() {
+    public Ketchup(){
         super(null);
     }
 

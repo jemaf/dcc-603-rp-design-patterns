@@ -1,5 +1,8 @@
 package strategy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PasswordValidator {
 
     private List<PasswordStrategy> strategies;
