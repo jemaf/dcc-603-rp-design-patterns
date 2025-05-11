@@ -18,6 +18,12 @@ public class DBConnection {
         return instance;
     }
 
+    public void connect() throws InterruptedException {
+        System.out.println("Connecting to " + this.connectionString);
+        Thread.sleep(1000);
+        System.out.println("Connected!!");
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
