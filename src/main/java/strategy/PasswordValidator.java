@@ -1,10 +1,41 @@
 package strategy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PasswordValidator {
 
-    // FIXME só aceita um tipo de validação (por tamanho)
-    public boolean validate(String password) {
-        return password.length() >= 8;
+    private List<PasswordStrategy> strategies;
+    
+    public PasswordValidator() {
+        this.strategies = new ArrayList<>();
+        setStrategy(new LengthStrategy());
     }
-
+    
+    public void setStrategy(PasswordStrategy strategy) {
+        this.strategies.clear();
+        this.strategies.add(strategy);
+    }
+    
+    public void addStrategy(PasswordStrategy strategy) {
+        this.strategies.add(strategy);
+    }
+    
+    public void clearStrategies() {
+        this.strategies.clear();
+    }
+    
+    public boolean validate(String password) {
+        if (strategies.isEmpty()) {
+            return true;
+        }
+        
+        for (PasswordStrategy strategy : strategies) {
+            if (!strategy.validate(password)) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
 }
