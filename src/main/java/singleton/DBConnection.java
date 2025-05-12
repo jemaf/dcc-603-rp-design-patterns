@@ -13,6 +13,7 @@ public class DBConnection {
     	if (instance == null) {
     		instance = new DBConnection(s);
     	}
+    	
     	return instance;
     }
 
