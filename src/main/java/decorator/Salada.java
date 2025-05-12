@@ -6,13 +6,17 @@ public class Salada extends IngredienteDecorator {
         super(ingrediente);
     }
 
+    public Salada() {
+        super(null);
+    }
+
     @Override
     public String imprimeIngrediente() {
-        return super.ingrediente.imprimeIngrediente() + ", Salada";
+        return "Salada" + (super.ingrediente == null ? "" : ", " + super.ingrediente.imprimeIngrediente());
     }
 
     @Override
     public double valorDoIngrediente() {
-        return super.ingrediente.valorDoIngrediente() + 0.25;
+        return 0.25 + (super.ingrediente == null ? 0 : super.ingrediente.valorDoIngrediente());
     }
 }

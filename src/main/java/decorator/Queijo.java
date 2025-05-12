@@ -6,13 +6,17 @@ public class Queijo extends IngredienteDecorator {
         super(ingrediente);
     }
 
+    public Queijo() {
+        super(null);
+    }
+
     @Override
     public String imprimeIngrediente() {
-        return super.ingrediente.imprimeIngrediente() + ", Queijo";
+        return "Queijo" + (super.ingrediente == null ? "" : ", " + super.ingrediente.imprimeIngrediente());
     }
 
     @Override
     public double valorDoIngrediente() {
-        return super.ingrediente.valorDoIngrediente() + 0.75;
+        return 0.75 + (super.ingrediente == null ? 0 : super.ingrediente.valorDoIngrediente());
     }
 }
