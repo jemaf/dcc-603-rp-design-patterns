@@ -8,6 +8,5 @@ public class Main {
 
         System.out.println(produto.imprimeIngrediente());
         System.out.println(produto.valorDoIngrediente());
-
     }
 }
