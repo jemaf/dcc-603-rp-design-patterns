@@ -6,6 +6,11 @@ public class Bacon extends IngredienteDecorator {
         super(ingrediente);
     }
 
+    // Constructor sem argumentos - caso o ingrediente seja o primeiro ou unico
+    public Bacon() {
+        super(null);
+    }
+
     @Override
     public String imprimeIngrediente() {
         return super.imprimeIngrediente() + ", Bacon";
