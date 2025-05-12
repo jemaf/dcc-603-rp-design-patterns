@@ -6,5 +6,10 @@ public class UpperCaseStrategy extends PasswordStrategy {
         return password.matches(".*[A-Z].*"); // REGEX
 
     }
+// Também funciona
+//    @Override
+//    public boolean validate(String password) {
+//        return password.chars().anyMatch(Character::isUpperCase);
+//    }
 }
 
