@@ -1,19 +1,18 @@
 package decorator;
 
-public class Pao extends IngredienteDecorator {
+public class Ketchup extends IngredienteDecorator {
 
-
-    public Pao(Ingrediente ingrediente) {
+    public Ketchup(Ingrediente ingrediente) {
         super(ingrediente);
     }
 
-    public Pao() {
+    public Ketchup() {
         super(null);
     }
 
     @Override
     public String imprimeIngrediente() {
-        String ingredientes = "Pão";
+        String ingredientes = "Ketchup";
 
         if (super.ingrediente != null)
             ingredientes += ", " + super.ingrediente.imprimeIngrediente();
@@ -24,12 +23,11 @@ public class Pao extends IngredienteDecorator {
     @Override
     public double valorDoIngrediente() {
 
-        double valor = 1.5;
+        double valor = 1.00;
 
         if (super.ingrediente != null)
             valor += ingrediente.valorDoIngrediente();
 
         return valor;
     }
-
 }
