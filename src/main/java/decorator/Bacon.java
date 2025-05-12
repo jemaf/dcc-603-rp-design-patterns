@@ -2,6 +2,10 @@ package decorator;
 
 public class Bacon extends IngredienteDecorator {
 
+    public Bacon() {
+        super(null);
+    }
+
     public Bacon(Ingrediente ingrediente) {
         super(ingrediente);
     }
@@ -9,18 +13,15 @@ public class Bacon extends IngredienteDecorator {
     @Override
     public String imprimeIngrediente() {
         String ingredientes = "Bacon";
-        if (super.ingrediente != null) {
+
+        if (super.ingrediente != null)
             ingredientes += ", " + super.ingrediente.imprimeIngrediente();
-        }
+
         return ingredientes;
     }
 
     @Override
     public double valorDoIngrediente() {
-        double valor = 1.50;
-        if (super.ingrediente != null) {
-            valor += super.ingrediente.valorDoIngrediente();
-        }
-        return valor;
+        return 1.50 + (super.ingrediente != null ? super.ingrediente.valorDoIngrediente() : 0);
     }
 }

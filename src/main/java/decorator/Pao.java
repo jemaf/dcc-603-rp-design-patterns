@@ -2,13 +2,12 @@ package decorator;
 
 public class Pao extends IngredienteDecorator {
 
+    public Pao() {
+        super(null);
+    }
 
     public Pao(Ingrediente ingrediente) {
         super(ingrediente);
-    }
-
-    public Pao() {
-        super(null);
     }
 
     @Override
@@ -23,12 +22,6 @@ public class Pao extends IngredienteDecorator {
 
     @Override
     public double valorDoIngrediente() {
-
-        double valor = 1.5;
-
-        if (super.ingrediente != null)
-            valor += ingrediente.valorDoIngrediente();
-
-        return valor;
+        return 1.5 + (super.ingrediente != null ? super.ingrediente.valorDoIngrediente() : 0);
     }
 }
