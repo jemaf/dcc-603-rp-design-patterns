@@ -6,18 +6,28 @@ public class Bacon extends IngredienteDecorator {
         super(ingrediente);
     }
 
+    public Bacon() {
+        super(null);
+    }
+
     @Override
     public String imprimeIngrediente() {
-        return super.imprimeIngrediente() + ", Bacon";
+        String ingredientes = "Bacon";
+
+        if (super.ingrediente != null)
+            ingredientes += ", " + super.ingrediente.imprimeIngrediente();
+
+        return ingredientes;
     }
 
     @Override
     public double valorDoIngrediente() {
-        return super.valorDoIngrediente() + 1.50;
+
+        double valor = 1.50;
+
+        if (super.ingrediente != null)
+            valor += ingrediente.valorDoIngrediente();
+
+        return valor;
     }
-
 }
-
-
-
-
