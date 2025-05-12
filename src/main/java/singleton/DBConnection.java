@@ -3,9 +3,18 @@ package singleton;
 public class DBConnection {
 
     private String connectionString;
+    private static DBConnection instance;
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
+    }
+    
+    public static synchronized DBConnection getInstance(String s) {
+    	if (instance == null) {
+    		instance = new DBConnection(s);
+    	}
+    	
+    	return instance;
     }
 
     public void connect() throws InterruptedException {
