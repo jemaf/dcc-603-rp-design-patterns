@@ -6,7 +6,6 @@ public class DBConnection {
     private static final DBConnection instance = new DBConnection("jdbc:default:connection"); // Initialize with a default or load from config
 
     private DBConnection(String connectionString) {
-        // Simulate time-consuming resource setup
         try {
             Thread.sleep(500);
         } catch (InterruptedException ex) {
