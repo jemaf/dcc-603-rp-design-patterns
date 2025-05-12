@@ -13,12 +13,16 @@ public class Salada extends IngredienteDecorator {
 
     @Override
     public String imprimeIngrediente() {
-        return super.imprimeIngrediente() + ", Salada";
+        if (super.ingrediente != null)
+            return "Salada, " + super.imprimeIngrediente();
+        return "Salada";
     }
 
     @Override
     public double valorDoIngrediente() {
-        return super.valorDoIngrediente() + 0.25;
+        if (super.ingrediente != null)
+            return super.valorDoIngrediente() + 0.25;
+        return 0.25;
     }
 
 }

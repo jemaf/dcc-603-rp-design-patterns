@@ -13,12 +13,16 @@ public class Ketchup extends IngredienteDecorator {
 
     @Override
     public String imprimeIngrediente() {
-        return super.imprimeIngrediente() + ", Ketchup";
+        if (super.ingrediente != null)
+            return "Ketchup, " + super.imprimeIngrediente();
+        return "Ketchup";
     }
 
     @Override
     public double valorDoIngrediente() {
-        return super.valorDoIngrediente() + 1.00;
+        if (super.ingrediente != null)
+            return super.valorDoIngrediente() + 1.00;
+        return 1.00;
     }
 
 }
