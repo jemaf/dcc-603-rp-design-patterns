@@ -1,10 +1,15 @@
 package strategy;
 
 public class PasswordValidator {
+    // Referência: https://www.freecodecamp.org/news/a-beginners-guide-to-the-strategy-design-pattern/
+    private PasswordStrategy strategy;
+    
+    public PasswordValidator(PasswordStrategy passwordStrategy){
+        this.strategy = passwordStrategy;
+    }
 
-    // FIXME só aceita um tipo de validação (por tamanho)
     public boolean validate(String password) {
-        return password.length() >= 8;
+        return strategy.validate(password);
     }
 
 }
