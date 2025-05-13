@@ -1,10 +1,11 @@
 package singleton;
 
 public class DBConnection {
+    private static DBConnection instance;
 
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
     }
 
@@ -12,5 +13,12 @@ public class DBConnection {
         System.out.println("Connecting to " + this.connectionString);
         Thread.sleep(1000);
         System.out.println("Connected!!");
+    }
+
+    public static DBConnection getInstance(String connectionString) {
+        if(instance == null){
+            instance = new DBConnection(connectionString);
+        }
+        return instance;
     }
 }
