@@ -19,12 +19,9 @@ public class Subject {
 
     public void notifyObservers() {
         // notificar observers adicionados
-        Iterator it = observers.iterator(); // uso de iterator para caminhar no ArrayList que é observers
-        while (it.hasNext()) {
-            Observer obs = (Observer) it.next();
+        for (Observer obs : observers){
             obs.update(this); // chama o método update de cada observer presente na lista
         }
     }
-
 }
 
