@@ -5,7 +5,7 @@ public class DBConnection {
 
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
     }
 
@@ -17,7 +17,7 @@ public class DBConnection {
 
     public static DBConnection getInstance(String connectionString) {
         if(instance == null){
-            return new DBConnection(connectionString);
+            instance = new DBConnection(connectionString);
         }
         return instance;
     }
