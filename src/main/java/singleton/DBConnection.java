@@ -3,9 +3,19 @@ package singleton;
 public class DBConnection {
 
     private String connectionString;
+    private static final DBConnection instance = new DBConnection("jdbc:default:connection"); // Initialize with a default or load from config
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
         this.connectionString = connectionString;
+    }
+
+    public static DBConnection getInstance() {
+        return instance;
     }
 
     public void connect() throws InterruptedException {
