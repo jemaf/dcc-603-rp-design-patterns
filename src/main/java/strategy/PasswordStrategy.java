@@ -1,6 +1,5 @@
 package strategy;
 
-public abstract class PasswordStrategy {
-
-    public abstract boolean validate(String password);
+public interface PasswordStrategy {
+    boolean validate(String password);
 }

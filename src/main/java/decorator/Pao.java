@@ -1,34 +1,13 @@
 package decorator;
 
-public class Pao extends IngredienteDecorator {
-
-
-    public Pao(Ingrediente ingrediente) {
-        super(ingrediente);
-    }
-
-    public Pao() {
-        super(null);
-    }
-
+public class Pao implements Ingrediente {
     @Override
     public String imprimeIngrediente() {
-        String ingredientes = "Pão";
-
-        if (super.ingrediente != null)
-            ingredientes += ", " + super.ingrediente.imprimeIngrediente();
-
-        return ingredientes;
+        return "Pão";
     }
 
     @Override
     public double valorDoIngrediente() {
-
-        double valor = 1.5;
-
-        if (super.ingrediente != null)
-            valor += ingrediente.valorDoIngrediente();
-
-        return valor;
+        return 2.00;
     }
 }
